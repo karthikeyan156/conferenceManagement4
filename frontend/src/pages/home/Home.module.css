@@ -1,0 +1,48 @@
+/* Home.module.css */
+.homeContainer {
+  padding: 20px;
+}
+
+.submissionsSection, .queriesSection {
+  margin-bottom: 20px;
+}
+
+.paperList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.paperItem {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd; /* Add a border */
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.paperTitle {
+  font-size: 24px; /* Larger font for paper title */
+  color: #007bff; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.paperTitle:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.paperAuthor {
+  font-size: 18px; /* Smaller font for author */
+  margin-top: 5px;
+}
+
+.paperDate {
+  font-size: 16px; /* Even smaller font for date */
+  margin-top: 5px;
+}
+
+.paperAbstract {
+  margin-top: 10px;
+  font-style: italic;
+}
+
+  
