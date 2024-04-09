@@ -1,0 +1,37 @@
+/* Adjustments to existing styles and additions for square images */
+.aboutContainer {
+    padding: 20px;
+  }
+  
+  .picturesSection img {
+    width: 200px; /* Medium size */
+    height: 200px; /* Equal width and height for square */
+    object-fit: cover; /* Ensures the image covers the area without distorting aspect ratio */
+    margin: 10px;
+  }
+  
+  .citationsSection, .peopleSection {
+    margin-top: 20px;
+  }
+  
+  .citation, .personProfile {
+    margin-bottom: 15px;
+  }
+  
+  .personProfile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profilePicture {
+    width: 20px; /* Medium size and square */
+    height: 20px; /* Equal width and height for square */
+    object-fit: cover; /* Ensures the image covers the area without distorting aspect ratio */
+    border-radius: 50%; /* Circular profile picture */
+    margin-right: 20px; /* Adds some space between the image and the text */
+  }
+  
+  blockquote {
+    font-style: italic;
+  }
+  

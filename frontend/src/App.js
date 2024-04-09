@@ -1,33 +1,49 @@
-// src/App.js
-import Home from './pages/home/home';
-import About from './pages/about/home';
-import Contact from './pages/contact/home';
-import PaperDetails from './pages/paper/paper';
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './pages/home/home';
+import About from './pages/about/about';
+import Contact from './pages/contact/home';
+import Paper from './pages/paper/paper';
+import PaperDetails from './pages/paper/paperDetails';
 import './App.css';
 
 function App() {
   return (
     <Router>
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/profile">Profile</Link></li>
-          <li><Link to="/papers">papers</Link></li>
-        </ul>
-      </nav>
-      
-      {/* In v6, <Switch> is replaced by <Routes> */}
-      <Routes>
-        <Route path="/about" element={<About />} />
-        <Route path="/profile" element={<About />} />
-        <Route path="/papers" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/paperDetails/:paperId" element={<PaperDetails />} />
-      </Routes>
+      <div className="content">
+        <nav>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/profile">Profile</Link></li>
+            <li><Link to="/papers">papers</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="/profile" element={<About />} /> {/* You might want to update this to point to an actual Profile component */}
+          <Route path="/papers" element={<Paper />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/paperDetails/:paperId" element={<PaperDetails />} />
+        </Routes>
+      </div>
+
+      <footer className="footer">
+        <div className="footer-left">
+          <p>International Science and Technology Society<br/>1, Dublin 1, Ireland - AZ5DF70</p>
+        </div>
+        <div className="footer-center">
+          <p>OUR PARTNERS<br/>GOOGLE, AMAZON R&D, IEEE</p>
+        </div>
+        <div className="footer-right">
+          <Link to="//facebook.com" target="_blank"><img src="/path-to-facebook-logo.png" alt="Facebook" /></Link>
+          <Link to="//twitter.com" target="_blank"><img src="/path-to-twitter-logo.png" alt="Twitter" /></Link>
+          <Link to="//instagram.com" target="_blank"><img src="/path-to-instagram-logo.png" alt="Instagram" /></Link>
+        </div>
+      </footer>
     </Router>
   );
 }

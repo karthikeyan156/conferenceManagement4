@@ -1,3 +1,20 @@
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 /* Navigation Styles */
 nav {
   background-color: #004d99; /* Dark blue background */
@@ -32,7 +49,36 @@ nav ul li a:hover, nav ul li a:focus {
 
 /* Content Styles */
 .content {
-  padding: 2rem; /* Padding around the content */
+  flex: 1;
 }
 
 /* Route specific styles can go here */
+/* Footer Styles */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+.footer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-left, .footer-center, .footer-right {
+  flex: 1;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+/* Social media icon sizes */
+.footer img {
+  width: 24px;
+  margin: 0 5px;
+}
