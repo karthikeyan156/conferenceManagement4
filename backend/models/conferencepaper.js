@@ -12,6 +12,10 @@ const ConferencePaperSchema = new Schema({
     type: String,
     required: true
   },
+  paperAuthor:{
+    type:String,
+    required:true
+  },
   reviewers: [{
     name: String,
     overallScore: Number,
@@ -21,14 +25,20 @@ const ConferencePaperSchema = new Schema({
     type:Number
   },
   isApproved:{
-    type:Boolean
+    type:Boolean,
+    required:true
   },
-  OverallReview:{
+  overallReview:{
     type:String
   },
   paperState:{
     type:String,
     default:"draft"
+  },
+  paperStatus:{
+    type:String,
+    required: true,
+    enum: ['ACCEPTED','REJECTED']
   }
 }, { timestamps: new Date() },); // Adding timestamps for creation and updates
 

@@ -2,13 +2,20 @@ const PaperModel = require("../models/conferencepaper"); // Ensure this path is 
 
 exports.addPaper= async (req, res) => {
   try {
-    const { paperName,paperLocation,reviewers} = req.body;
-    let totalMarks=findTotalMarks(reviewers);
+    const { paperName,paperLocation,paperAuthor,reviewers,totalMarks,isApproved,overallReview,paperState,paperStatus} = req.body;
+    if(!totalMarks){
+     totalMarks=findTotalMarks(reviewers);
+    }
     const paper = new PaperModel({
       paperName,
       paperLocation,
+      paperAuthor,
       reviewers,
-      totalMarks
+      totalMarks,
+      isApproved,
+      overallReview,
+      paperState,
+      paperStatus
     });
 
     const savedDoc = await paper.save();
@@ -32,6 +39,17 @@ exports.listAll = async (req, res) => {
   }
 };
 
+exports.getPaper = async (req, res) => {
+  try {
+    let id = req.body.id;
+    let paper=await PaperModel.find({_id:id});
+    console.log("results",paper)
+    res.status(200).json(paper[0]);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ message: "An error occurred, please try again later." });
+  }
+};
 
 exports.addPaperReview= async (req, res) => {
   try {
