@@ -164,3 +164,7 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+.buttons button.draft {
+  background-color: #1f7bf5;
+}

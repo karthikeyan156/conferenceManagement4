@@ -2,8 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/home/home';
 import About from './pages/about/about';
-import Contact from './pages/contact/home';
+import Contact from './pages/contact/contact';
 import Paper from './pages/paper/paper';
+import Login from './pages/login/login';
 import PaperDetails from './pages/paper/paperDetails';
 import './App.css';
 
@@ -13,7 +14,7 @@ function App() {
       <div className="content">
         <nav>
           <ul>
-            <li><Link to="/">Home</Link></li>
+            <li><Link to="/home">Home</Link></li>
             <li><Link to="/about">About</Link></li>
             <li><Link to="/profile">Profile</Link></li>
             <li><Link to="/papers">papers</Link></li>
@@ -26,7 +27,8 @@ function App() {
           <Route path="/profile" element={<About />} /> {/* You might want to update this to point to an actual Profile component */}
           <Route path="/papers" element={<Paper />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/paperDetails/:paperId" element={<PaperDetails />} />
         </Routes>
       </div>

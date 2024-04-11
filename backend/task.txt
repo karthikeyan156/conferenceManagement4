@@ -23,3 +23,9 @@ overall review for the paper - draft or publish - finished backend api
 When the organizer clicks submit all reviews and the final accept/reject decision are visible to the paper author. - finished backend api
 
 
+to do :
+connect frontend with backend 
+home page papers click should go to paperdetails page 
+download of pdfs
+reject or selected should be updated
+aubout us page

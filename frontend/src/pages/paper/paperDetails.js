@@ -22,10 +22,22 @@ function PaperDetails() {
     fetchPaperDetails();
   }, [paperId]);
 
-  const handleSubmitResponse = (status) => {
-    console.log(`Review for paper ${paperId}: ${review}. Status: ${status}`);
-    alert('Response submitted successfully');
-    setReview('');
+  const handleSubmitResponse = async (status) => {
+    try {
+      const updateEndpoint = `http://localhost:3000/paper/editPaper`;
+      // Sending the ID, review, and status to the API
+      await axios.post(updateEndpoint, {
+        paperId,
+        review,
+        status, // 'Accepted' or 'Rejected'
+      });
+
+      alert(`Paper status updated to: ${status}`);
+      setReview(''); // Reset review text
+      // Optionally, refetch paper details to reflect the update
+    } catch (error) {
+      console.error('Error submitting paper status:', error);
+    }
   };
 
   return (
@@ -39,7 +51,7 @@ function PaperDetails() {
       <p><strong>Status:</strong> {paper.isApproved ? 'Approved' : 'Not Approved'}</p>
       <p><strong>Overall Review:</strong> {paper.overallReview}</p>
       <p><strong>Paper State:</strong> {paper.paperState}</p>
-      <p><strong>Paper Status:</strong> {paper.paperStatus}</p>
+      <p><strong>Paper Status:</strong> {paper.paperStatus}</p>x
       <p><strong>Abstract:</strong> {paper.abstract}</p>
       
       {/* Displaying reviewers */}
@@ -74,6 +86,7 @@ function PaperDetails() {
       <div className="buttons">
         <button className="accept" onClick={() => handleSubmitResponse('Accepted')}>Accept</button>
         <button className="reject" onClick={() => handleSubmitResponse('Rejected')}>Reject</button>
+        <button className="draft" onClick={() => handleSubmitResponse('Draft')}>Save & Continue</button>
       </div>
     </div>
   );
