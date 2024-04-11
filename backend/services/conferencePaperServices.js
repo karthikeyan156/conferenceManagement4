@@ -54,11 +54,13 @@ exports.getPaper = async (req, res) => {
 exports.addPaperReview= async (req, res) => {
   try {
     let paperId= req.body._id;
-    const { OverallReview , paperState , isApproved} = req.body;
+    const { OverallReview , paperState , isApproved,paperStatus,overallReview} = req.body;
     const updatedData ={
         OverallReview , 
         paperState , 
-        isApproved
+        isApproved,
+        paperStatus,
+        overallReview
     }
     const savedDoc = await PaperModel.findByIdAndUpdate(paperId,updatedData,{new:true})
     if(savedDoc){

@@ -27,5 +27,4 @@ to do :
 connect frontend with backend 
 home page papers click should go to paperdetails page 
 download of pdfs
-reject or selected should be updated
 aubout us page

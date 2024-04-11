@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+
 import Modal from 'react-modal';
 import styles from '../home/Home.module.css'; // Adjust the path as needed
 
@@ -105,7 +107,20 @@ function Home() {
     }
   ]
   ;
+  useEffect(() => {
+    // Function to fetch papers data
+    const fetchPapers = async () => {
+      try {
+        // Replace with your actual API endpoint
+        const response = await axios.get('http://localhost:3000/paper/listAll');
+        console.log(response.data)
+      } catch (error) {
+        console.error('Error fetching papers:', error);
+      }
+    };
 
+    fetchPapers();
+  }, []); 
   const openModal = (query) => {
     setCurrentQuery(query);
     setModalIsOpen(true);

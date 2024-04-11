@@ -33,12 +33,13 @@ const ConferencePaperSchema = new Schema({
   },
   paperState:{
     type:String,
-    default:"draft"
+    default:"draft",
+    enum:['draft','published']
   },
   paperStatus:{
     type:String,
     required: true,
-    enum: ['ACCEPTED','REJECTED']
+    enum: ['ACCEPTED','REJECTED','UNDER REVIEW']
   }
 }, { timestamps: new Date() },); // Adding timestamps for creation and updates
 

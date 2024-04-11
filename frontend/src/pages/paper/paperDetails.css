@@ -168,3 +168,8 @@ a:hover {
 .buttons button.draft {
   background-color: #1f7bf5;
 }
+
+.disabledTextarea {
+  background-color: #f3f3f3;
+  color: #666;
+}
