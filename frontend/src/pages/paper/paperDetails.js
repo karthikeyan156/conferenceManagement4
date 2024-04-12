@@ -77,7 +77,7 @@ function PaperDetails() {
       <p><strong>Paper ID:</strong> {paperId}</p>
       <p><strong>Location:</strong> {paper.paperLocation}</p>
       <p><strong>Date:</strong> {paper.createdAt?.slice(0, 10)}</p>
-      <p><strong>Marks:</strong> {paper.totalMarks}</p>
+      <p><strong>Score:</strong> {paper.totalMarks}</p>
       <p><strong>Status:</strong> {paper.isApproved ? 'Approved' : 'Not Approved'}</p>
       <p><strong>Overall Review:</strong> {paper.overallReview}</p>
       <p><strong>Paper State:</strong> {paper.paperState}</p>

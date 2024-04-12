@@ -18,6 +18,10 @@ app.use("/paper", conferencePaperRoutesRoutes);
 const userRoutes = require('./routes/userRoutes');
 app.use("/user", userRoutes);
 
+const queryRoutes = require('./routes/queryRoutes')
+app.use("/query", queryRoutes);
+
+
 app.get('/', (req, res) => {
   res.status(200).json("Hello world");
 });

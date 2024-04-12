@@ -24,7 +24,6 @@ When the organizer clicks submit all reviews and the final accept/reject decisio
 
 
 to do :
-connect frontend with backend 
-home page papers click should go to paperdetails page 
+login backend 
 download of pdfs
-aubout us page
+about us page , profile
