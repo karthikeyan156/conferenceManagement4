@@ -31,8 +31,8 @@ exports.addPaper= async (req, res) => {
 
 exports.listAll = async (req, res) => {
   try {
-    let allTimings=await PaperModel.find({});
-    res.status(200).json(allTimings);
+    let allPapers=await PaperModel.find({});
+    res.status(200).json(allPapers);
   } catch (err) {
     console.log(err);
     res.status(500).json({ message: "An error occurred, please try again later." });

@@ -12,22 +12,24 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault(); // Prevent the form from submitting traditionally
     try {
-    //   const response = await axios.post('http://yourapi.com/login', {
-    //     username,
-    //     password,
-    //   });
-   let  response = {
-    "data":{
-        "status":"success"
-    }
-   }
+      const response = await axios.post('http://localhost:3000/user/login', {
+        username,
+        password,
+      });
+  //  let  response = {
+  //   "data":{
+  //       "status":"success"
+  //   }
+  //  }
       // Assuming the API returns a status or a token to indicate success
-      if (response.data.status === 'success') {
+      if (response) {
         navigate('/home'); // Navigate to the homepage on successful login
-      } else {
+      } else if(response.data.role!=='admin'){
+        setError('Your are not admin user');
+      }else {
         setError('Invalid username or password.');
-      }
-    } catch (error) {
+    } 
+  }catch (error) {
       setError('Login failed. Please try again later.');
     }
   };

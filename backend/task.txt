@@ -24,6 +24,6 @@ When the organizer clicks submit all reviews and the final accept/reject decisio
 
 
 to do :
-login backend 
+login backend - done
 download of pdfs
-about us page , profile
+about us page , profile - css - ajay
