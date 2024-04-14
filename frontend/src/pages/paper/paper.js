@@ -34,10 +34,10 @@ function Paper() {
         sorted.sort((a, b) => a.totalMarks - b.totalMarks);
         break;
       case 'acceptedFirst':
-        sorted.sort((a, b) => (a.isAccepted === b.isAccepted) ? 0 : a.isAccepted ? -1 : 1);
+        sorted.sort((a, b) => (a.isApproved === b.isApproved) ? 0 : a.isApproved ? -1 : 1);
         break;
       case 'rejectedFirst':
-        sorted.sort((a, b) => (a.isAccepted === b.isAccepted) ? 0 : a.isAccepted ? 1 : -1);
+        sorted.sort((a, b) => (a.isApproved === b.isApproved) ? 0 : a.isApproved ? 1 : -1);
         break;
       default:
         // No default sorting needed as the original order comes from the API

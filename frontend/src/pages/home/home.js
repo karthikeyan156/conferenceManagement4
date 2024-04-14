@@ -17,7 +17,7 @@ function Home() {
     // Fetch papers data and reviewer queries from API
     const fetchPapers = async () => {
       try {
-        const papersResponse = await axios.get('http://localhost:3000/paper/listAll');
+        const papersResponse = await axios.get('http://localhost:3000/paper/listAllRecent');
         setPaperSubmissions(papersResponse.data); // Update state with fetched data
       } catch (error) {
         console.error('Error fetching papers:', error);

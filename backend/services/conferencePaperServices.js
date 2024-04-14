@@ -38,7 +38,15 @@ exports.listAll = async (req, res) => {
     res.status(500).json({ message: "An error occurred, please try again later." });
   }
 };
-
+exports.listAllRecent = async (req, res) => {
+  try {
+    let allPapers=await PaperModel.find({paperStatus:'UNDER REVIEW'});
+    res.status(200).json(allPapers);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ message: "An error occurred, please try again later." });
+  }
+};
 exports.getPaper = async (req, res) => {
   try {
     let id = req.body.id;
