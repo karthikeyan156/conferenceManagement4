@@ -77,6 +77,22 @@ exports.addPaperReview= async (req, res) => {
 };
 //should work on delete solt when a customer selects it.
 
+exports.sendPaper = async (req, res) => {
+    const paperId  = req.body.id;
+    const filePath = `/Users/karthikeyannagarajan/Documents/ConferenceManagement4/conferenceManagement4/backend/paperpdfs/${paperId}.pdf`; // Adjust the path as necessary
+    console.log(paperId)
+    // Check if the file exists
+    res.sendFile(filePath, (err) => {
+        if (err) {
+            // Handling the error when file does not exist or some other error
+            console.log(err);
+            res.status(404).send('File not found');
+        } else {
+            console.log('File sent:', filePath);
+        }
+    });
+}
+
 const findTotalMarks = (reviewers) => {
     let totalMarks=0;
     console.log(reviewers)
