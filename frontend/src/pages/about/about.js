@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import styles from './about.css';
-
+import styles from './about.module.css';
+import NavBar from '../nav';
+import Footer from '../footer';
 const About = () => {
   const [pictures] = useState([
     { src: 'https://fourwaves.com/media/jjtaaupz/conference-speaker.jpg?quality=100&rnd=132864618244570000', alt: 'Image 1 Description' },
@@ -30,7 +31,11 @@ const About = () => {
   };
 
   return (
+    <div>
+        <NavBar />
+   
     <div className={styles.aboutContainer}>
+     
       <section className={styles.picturesSection}>
         <h2>Gallery</h2>
         <Slider {...settings}>  {/* Use Slider component here */}
@@ -69,7 +74,10 @@ const About = () => {
           ))}
         </Slider>
       </section>
-    </div>
+     
+          </div>
+          <Footer />
+          </div>
   );
 };
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Modal from 'react-modal';
 import styles from '../home/Home.module.css'; // Adjust the path as needed
-
+import NavBar from '../nav';
 Modal.setAppElement('#root'); // For accessibility reasons
 
 function Home() {
@@ -53,7 +53,10 @@ function Home() {
   };
 
   return (
+    <div>
+      <NavBar />
     <div className={styles.homeContainer}>
+     
       {/* Paper Submissions Section */}
       <section className={styles.submissionsSection}>
         <h2>Recent Paper Submissions</h2>
@@ -95,6 +98,7 @@ function Home() {
         />
         <button onClick={handleSubmit} className={styles.submitButton}>Submit</button>
       </Modal>
+    </div>
     </div>
   );
 }

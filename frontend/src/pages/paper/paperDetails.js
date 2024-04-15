@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './paperDetails.css';
-
+import NavBar from '../nav';
 function PaperDetails() {
   const { paperId } = useParams();
   const [paper, setPaper] = useState({});
@@ -106,6 +106,7 @@ function PaperDetails() {
 
   return (
     <div className="paper-details-container">
+      <NavBar />
       <h2>{paper.paperName}</h2>
       <p><strong>Author:</strong> {paper.paperAuthor}</p>
       <p><strong>Paper ID:</strong> {paperId}</p>

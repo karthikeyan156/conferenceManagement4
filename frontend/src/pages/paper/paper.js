@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styles from './paper.module.css';
-
+import NavBar from '../nav';
 function Paper() {
   const navigate = useNavigate();
   const [sortedPapers, setSortedPapers] = useState([]);
@@ -51,6 +51,7 @@ function Paper() {
 
   return (
     <div className={styles.paperContainer}>
+      < NavBar />
       <div className={styles.header}>
         <h2>Papers</h2>
         <select onChange={handleSortChange} className={styles.dropdown}>

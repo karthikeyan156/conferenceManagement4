@@ -1,74 +1,70 @@
-import React, { useState } from 'react';
-import './contactPage.css'; // Make sure to create a corresponding CSS file for styling
+// import React, { useState } from 'react';
+// import Navbar from '../nav';
+// import Footer from '../footer';
+// import logo from 'https://png.pngtree.com/templates/20180813/community-organization-logo-design-template-png_28632.jpg'; // Make sure to import your logo
 
-function ContactPage() {
-  const [formState, setFormState] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+// const ContactPage = () => {
+//     const [formData, setFormData] = useState({
+//         name: '',
+//         email: '',
+//         message: ''
+//     });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormState(prevState => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+//     const handleChange = (e) => {
+//         setFormData({ ...formData, [e.target.name]: e.target.value });
+//     };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formState);
-    // Here you could add functionality to send form data to a server or email service
-    alert('Thank you for your message!');
-    setFormState({ name: '', email: '', message: '' }); // Reset form after submission
-  };
+//     const handleSubmit = (e) => {
+//         e.preventDefault();
+//         // Handle form submission logic here, e.g., send data to a server
+//         console.log(formData);
+//         alert("Message sent!");
+//     };
 
-  return (
-    <div className="contact-page-container">
-      <div className="contact-details">
-        <img src={"https://png.pngtree.com/templates/20180813/community-organization-logo-design-template-png_28632.jpg"} alt="Organization Logo" className="org-logo" />
-        <h3>Our Organization</h3>
-        <p><strong>Email:</strong> contact@ourorg.com</p>
-        <p><strong>Phone:</strong> +123 456 7890</p>
-        <p><strong>Address:</strong> 123 Main St, City, Country</p>
-      </div>
-      <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formState.name}
-          onChange={handleChange}
-          required
-        />
-        
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formState.email}
-          onChange={handleChange}
-          required
-        />
-        
-        <label htmlFor="message">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          value={formState.message}
-          onChange={handleChange}
-          required
-        />
-        
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  );
-}
+//     return (
+//         <div>
+//             <Navbar />
+//             <div className="contact-page-container">
+//                 <div className="contact-details">
+//                     <img src='https://png.pngtree.com/templates/20180813/community-organization-logo-design-template-png_28632.jpg' alt="Organization Logo" className="org-logo" />
+//                     <h2>Contact Us</h2>
+//                     <p>Please fill out the form to get in touch with us.</p>
+//                 </div>
+//                 <div className="contact-form-container">
+//                     <form onSubmit={handleSubmit}>
+//                         <label htmlFor="name">Name:</label>
+//                         <input
+//                             type="text"
+//                             id="name"
+//                             name="name"
+//                             value={formData.name}
+//                             onChange={handleChange}
+//                         />
 
-export default ContactPage;
+//                         <label htmlFor="email">Email:</label>
+//                         <input
+//                             type="email"
+//                             id="email"
+//                             name="email"
+//                             value={formData.email}
+//                             onChange={handleChange}
+//                         />
 
+//                         <label htmlFor="message">Message:</label>
+//                         <textarea
+//                             id="message"
+//                             name="message"
+//                             value={formData.message}
+//                             onChange={handleChange}
+//                         />
+
+//                         <button type="submit">Send Message</button>
+//                     </form>
+//                 </div>
+//             </div>
+//             <Footer />
+//         </div>
+//     );
+// };
+
+// export default ContactPage;

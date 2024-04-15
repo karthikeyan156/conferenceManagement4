@@ -1,0 +1,86 @@
+
+
+.loginFormContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: #ffffff; /* Pure white background for a clean look */
+  border-radius: 10px; /* Soft rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly lighter shadow for subtlety */
+  border: 1px solid #ccc; /* Maintains a subtle border for definition */
+  width: 100%; /* Full width to ensure responsiveness */
+  max-width: 360px; /* Maximum width to maintain form size */
+  margin: auto; /* Centering in the likely case it's used within a larger .container */
+  position: relative; /* Useful for absolute positioning of inner elements if needed */
+  z-index: 1; /* Ensures it's above the background but below any overlay if used */
+}
+
+.orgName{
+  margin-bottom: 20px; /* Space between the organization name and the form */
+  font-size: 24px; /* Larger font for visibility */
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+}
+
+form {
+  width: 100%;
+}
+
+form div {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background: #f9f9f9;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 8px rgba(0, 86, 179, 0.2);
+  outline: none;
+}
+
+form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background-image: linear-gradient(to right, #0062E6, #33AEFF);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.2s ease;
+}
+
+form button:hover {
+  background-image: linear-gradient(to right, #0056b3, #0062E6);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.error {
+  color: #d32f2f;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
