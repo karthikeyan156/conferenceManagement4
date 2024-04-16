@@ -18,7 +18,7 @@ const ProfilePage = () => {
             try {
                 const response = {
                     "data":{
-                        "name":"james",
+                        "name":"James",
                         "email":"james@gmail.com",
                         "bio":"bio is this",
 

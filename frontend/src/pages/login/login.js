@@ -16,7 +16,7 @@ function Login() {
         username,
         password,
       });
-      if (response.data.success) {
+      if (response) {
         navigate('/home');
       } else {
         setError('Invalid username or password or you are not an admin.');
