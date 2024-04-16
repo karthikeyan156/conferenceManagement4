@@ -6,7 +6,7 @@
   "scripts": {
       "start": "node app.js"
   },
-  "author": "Karthikeyan",
+  "author": "vignesh,ajay,sameer,imran,banu,indrasena",
   "license": "ISC",
   "dependencies": {
       "bcrypt-nodejs": "0.0.3",
