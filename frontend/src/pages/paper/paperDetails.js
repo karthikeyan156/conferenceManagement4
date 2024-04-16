@@ -105,8 +105,10 @@ function PaperDetails() {
   };
 
   return (
+    <div>
+        <NavBar />
     <div className="paper-details-container">
-      <NavBar />
+    
       <h2>{paper.paperName}</h2>
       <p><strong>Author:</strong> {paper.paperAuthor}</p>
       <p><strong>Paper ID:</strong> {paperId}</p>
@@ -152,6 +154,7 @@ function PaperDetails() {
         <button type="button" className="reject" onClick={() => handleSubmitResponse('Rejected')}>Reject</button>
         <button type="button" className="draft" onClick={() => handleSubmitResponse('Draft')}>Save & Continue</button>
       </div>
+    </div>
     </div>
   );
 }
