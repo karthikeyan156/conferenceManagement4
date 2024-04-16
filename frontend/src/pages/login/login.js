@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import styles from './login.module.css'; // Updated path if needed
+import styles from './login.module.css';
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -16,9 +16,7 @@ function Login() {
         username,
         password,
       });
-
-      // Check if login was successful and the role of the user
-      if (response) {
+      if (response.data.success) {
         navigate('/home');
       } else {
         setError('Invalid username or password or you are not an admin.');
@@ -30,12 +28,11 @@ function Login() {
 
   return (
     <div className={styles.container}>
-    <div className={styles.orgName}>Organization Name</div>
+      <div className={styles.orgName}>Conference Management</div>  {/* Moved outside the login form container */}
       <div className={styles.loginFormContainer}>
-        
         <form onSubmit={handleLogin}>
           <div>
-            <label>Username:</label>
+            <label >Username:</label>
             <input
               type="text"
               value={username}
